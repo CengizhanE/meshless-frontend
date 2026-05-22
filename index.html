@@ -10,16 +10,16 @@
             padding: 0;
             width: 100vw;
             height: 100vh;
-            overflow: hidden; /* This acts as the clipping mask for the whole screen */
+            overflow: hidden; 
             background-color: #0e1117; 
         }
         
         .streamlit-container {
             position: absolute;
-            top: -2px; /* Pushes the top white border off-screen */
-            left: -2px; /* Pushes the left white border off-screen */
-            width: calc(100% + 4px); /* Compensates for the shift so the right border goes off-screen */
-            height: calc(100% + 45px); /* Pushes the 45px Streamlit footer entirely off the bottom of the screen */
+            top: -12px;  /* Pushes the top rounded corners entirely off-screen */
+            left: -12px; /* Pushes the left rounded corners entirely off-screen */
+            width: calc(100% + 24px); /* Compensates for both left and right shifts (12px + 12px) */
+            height: calc(100% + 57px); /* Compensates for the 12px top shift AND the 45px bottom footer */
         }
         
         iframe {
