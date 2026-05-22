@@ -12,13 +12,37 @@
             overflow: hidden;
             background-color: #0e1117; 
         }
+        
+        /* Container needed to position the mask over the iframe */
+        .streamlit-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        
         iframe {
             width: 100%;
             height: 100%;
             border: none;
         }
+
+        /* The CSS Mask that covers the Streamlit Cloud footer */
+        .footer-mask {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 45px; /* Adjust this slightly if the white line still peeks out */
+            background-color: #0e1117; /* Matches your background exactly */
+            z-index: 9999;
+        }
     </style>
 </head>
 <body>
-    <iframe src="https://meshless-inference.streamlit.app/?embed=true&embed_options=dark_theme" frameborder="0"></iframe></body>
+    <div class="streamlit-container">
+        <iframe src="https://meshless-inference.streamlit.app/?embed=true&embed_options=dark_theme" frameborder="0"></iframe>
+        <!-- This div sits perfectly over the bottom 45px of the iframe -->
+        <div class="footer-mask"></div>
+    </div>
+</body>
 </html>
